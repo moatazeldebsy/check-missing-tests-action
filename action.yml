@@ -1,0 +1,12 @@
+name: 'Check Missing Tests'
+description: 'Check if new functions in PRs are missing unit tests'
+author: 'Moataz Nabil'
+
+inputs:
+  github-token:
+    description: 'GitHub token to authenticate API requests'
+    required: true
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js' # Path to the compiled JavaScript file
