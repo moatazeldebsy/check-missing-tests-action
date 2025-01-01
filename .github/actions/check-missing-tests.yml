@@ -1,0 +1,19 @@
+name: Check Missing Unit Tests
+
+on:
+  pull_request:
+    paths:
+      - "**/*.js"
+      - "**/*.ts"
+
+jobs:
+  check-missing-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run the Action
+        uses: moatazeldebsy/check-missing-tests-action@v1.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
